@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34A9CA7B-2C82-4AF1-A64E-B9E00A48D3BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SiparisOtomasyon.BL</RootNamespace>
+    <AssemblyName>SiparisOtomasyon.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IBusiness.cs" />
+    <Compile Include="Abstract\ICategoryBusiness.cs" />
+    <Compile Include="Abstract\ICustomerBusiness.cs" />
+    <Compile Include="Abstract\IEmployeeBusiness.cs" />
+    <Compile Include="Abstract\IOrderBusiness.cs" />
+    <Compile Include="Abstract\IOrderDetailBusiness.cs" />
+    <Compile Include="Abstract\IProductBusiness.cs" />
+    <Compile Include="Abstract\IShippersBusiness.cs" />
+    <Compile Include="Abstract\ISupplierBusiness.cs" />
+    <Compile Include="Concrete\CategoryBusiness.cs" />
+    <Compile Include="Concrete\CustomerBusiness.cs" />
+    <Compile Include="Concrete\EmployeeBusiness.cs" />
+    <Compile Include="Concrete\OrderBusiness.cs" />
+    <Compile Include="Concrete\OrderDetailBusiness.cs" />
+    <Compile Include="Concrete\ProductBusiness.cs" />
+    <Compile Include="Concrete\ShipperBusiness.cs" />
+    <Compile Include="Concrete\SupplierBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SiparisOtomasyon.Core\SiparisOtomasyon.Core.csproj">
+      <Project>{59535e5c-1783-428e-a094-1d299e9f2708}</Project>
+      <Name>SiparisOtomasyon.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SiparisOtomasyon.DAL\SiparisOtomasyon.DAL.csproj">
+      <Project>{68f8096c-959b-4bd4-9dcc-ed2404819734}</Project>
+      <Name>SiparisOtomasyon.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
